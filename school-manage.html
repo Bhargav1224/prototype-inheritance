@@ -1,0 +1,92 @@
+<!-- // simple school management system. 
+// Problem
+// Create multiple constructor functions to add new teachers,
+// new students and new competitions.
+// Since, the data will have same pattern, use constructor functions 
+// to create objects and store data.
+
+// add methods using prototype to print bio of students and teacher.
+
+// For competitions create a method of your own choice:-
+// Follow the best practices we discussed. -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Proto-type</h1>
+    <script>
+        function Addteachers(name,dep,rollno) {
+            this.name=name;
+            this.dep=dep;
+            this.rollno=rollno;
+
+        };
+      
+        function AddStudents(name,dep,rollno) {
+            this.name=name;
+            this.dep=dep;
+            this.rollno=rollno;
+        };
+        function AddCompitions(game,prize) {
+            this.game=game;
+            this.prize=prize;
+        };
+       
+
+        //using constrctors we can add details of n-teachers and student data
+
+        var teacher1=new Addteachers("Nrupul","maths","1");
+        console.log(teacher1);
+        var teacher2=new Addteachers("Yogesh","English","2");
+        console.log(teacher2);
+
+        var student1=new AddStudents("Rahul","Civil","sm2_023");
+        console.log(student1);
+        var student2=new AddStudents("Bhargav","ECE","sm2_042");
+        console.log(student2);
+
+        var game1=new AddCompitions("Kabbadi","1000/-");
+        console.log(game1);
+        var game2=new AddCompitions("Cricket","2000/-");
+        console.log(game2);
+
+        //using prototype to print biodata of students and teacher.
+       
+        
+        Object.prototype.print = function(){
+            console.log(this.name+" "+this.rollno+" "+this.dep)
+        }
+        teacher1.print()
+        teacher2.print()
+
+        student1.print()
+        student2.print()
+
+        //displaying competition data using prototype
+
+
+        
+        Object.prototype.print = function(){
+            console.log(this.game+" "+this.prize)
+        }
+        game1.print();
+        game2.print();
+            
+
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+
